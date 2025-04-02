@@ -1,0 +1,19 @@
+psql -U postgres
+
+###list database###
+\l
+
+create database trino_test;
+
+###access database###
+\c database_name
+
+\c trino_test;
+
+###list schemas###
+\dn
+
+create schema testing;
+
+
+SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname = 'testing';

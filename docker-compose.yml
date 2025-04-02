@@ -1,0 +1,22 @@
+services:
+ postgres:
+    image: postgres:16
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: test_postgres_db
+    ports:
+      - 5432:5432
+    restart: always
+    networks:
+      - network_test
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+networks:
+  network_test:
+    name: network_test
+    external: true
