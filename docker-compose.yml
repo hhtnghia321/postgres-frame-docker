@@ -1,7 +1,7 @@
 services:
  postgres_sourrce:
     image: postgres:16
-    container_name: postgres
+    container_name: postgres_sourrce
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
